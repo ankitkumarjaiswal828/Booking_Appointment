@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Booking Appointment</title>
+    </head>
+
+    <body>
+        <div style="margin-left: 500px;">
+            <h3 style="margin-left: 200px; font-weight: bolder; color: orange;">Book a call</h3>
+            <p>Book a call slot and our representative with call you within 1 hour of selected time.</p>
+        </div>
+        <hr>
+
+        <form action="#" onsubmit="register_User()">
+
+            <div style="margin-left: 500px;">
+                <label for="name" style="font-weight:bold ;">Name:</label><br>
+                <input type="text" id="username" name="username" placeholder="Enter your Name"
+                    style="width: 525px; height: 30px;" />
+
+                <br>
+                <br>
+                <label for="email" style="font-weight:bold ;">Email:</label><br>
+                <input type="email" id="mail" name="mail" placeholder="Enter your Mail Id "
+                    style="width: 525px; height: 30px;">
+
+                <br><br>
+                <label for="Phone" style="font-weight:bold ;">Phone:</label><br>
+                <input type="number" id="phone" name="phone" placeholder="Enter you Phone Number"
+                    style="width: 525px; height: 30px;">
+
+                <br><br>
+                <label for="number" style="font-weight:bold ;">Date & Time for Call:</label><br>
+                <div style="display: flex;">
+                    <input type="date" style="width: 250px; height: 30px;" id="date">
+                    <select name="time" id="time" style="width: 250px; height: 34px; margin-left: 26px;">
+                        <option value="">Choose Time</option>
+                        <option value="11:00">11:00</option>
+                        <option value="12:00">12:00</option>
+                        <option value="1:00">1:00</option>
+                        <option value="2:00">2:00</option>
+                        <option value="3:00">3:00</option>
+                    </select>
+                </div>
+
+                <br><br>
+                <input type="submit" value="GET A CALL" onclick="register_User()"
+                    style="background-color: orange; width: 525px; height: 35px; border-radius: 20px; font-weight: bold;" />
+            </div>
+        </form>
+
+       
+     <script src="scriptss.js"></script>
+
+    </body>
+
+</html>

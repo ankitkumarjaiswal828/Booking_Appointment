@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="head">Hello world</h1>
+    <button id="btn" style="height: 40px; font-weight: bolder;">Click for Apply Event Functionality</button>
+
+        <br><br>
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="Enter Your Name"><br><br>
+        <button type="submit" id="btn2" style="height: 40px; font-weight: bolder;">Submit</button>
+
+    <script>
+        document.querySelector('#btn').addEventListener('click',(e)=>{
+                e.preventDefault();
+                document.querySelector('#head').style.backgroundColor= 'Red';
+        })  
+
+        document.querySelector('#btn').addEventListener('mouseout',(e) =>
+            {
+                e.preventDefault();
+                document.querySelector('#head').style.backgroundColor = 'yellow';
+            })
+
+            document.querySelector('#btn').addEventListener('mouseover',(e) =>
+                {
+                    e.preventDefault();
+                    document.querySelector('#head').style.backgroundColor = 'Green';
+                })
+
+                document.querySelector('#btn2').addEventListener('submit',()=>{
+                    e.preventDefault();
+                    let res = document.querySelector("#name")
+                    console.log(res.value);
+                })
+
+        
+    </script>
+</body>
+</html>
