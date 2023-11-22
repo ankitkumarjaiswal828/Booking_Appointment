@@ -1,23 +1,23 @@
-function register_User(){
-    
-    let name = document.getElementById("username").value
-    let mail = document.getElementById("mail").value;
-    let phone = document.getElementById("phone").value;
-    let date = document.getElementById("date").value;
-    let time = document.getElementById("time").value;
+function register_User(event) {
+  event.preventDefault();
+  let name = event.target.username.value;
+  let mail = event.target.mail.value;
+  let phone = event.target.phone.value;
 
-    // localStorage.setItem("Username",name)
-    // localStorage.setItem("Email",mail)
-    // localStorage.setItem("Phone_no",phone)
-    // localStorage.setItem("Time",time)
-    // localStorage.setItem("Date",date)
-    let obj = {
-        name,
-        mail,
-        phone,
-        date,
-        time
-    }
-   let a =  localStorage.setItem("Userdetails",JSON.stringify(obj))
-   console.log(a)
+  let obj = {
+    name,
+    mail,
+    phone,
+  };
+  localStorage.setItem(obj.mail, JSON.stringify(obj));
+  showData(obj);
+}
+
+function showData(obj) {
+  let ptEle = document.getElementById("browData");
+  ptEle.innerHTML =
+    ptEle.innerHTML + `<li>${obj.name} - ${obj.mail}--${obj.phone}</li>`;
+  //   let childEle = document.createElement("li");
+  //   childEle.textContent = obj.name +" - " +obj.mail +" - " +obj.phone;
+  //   ptEle.appendChild(childEle);
 }

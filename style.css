@@ -1,0 +1,14 @@
+.cls{
+    font-weight: bold
+}
+.btn{
+    background-color: orange;
+        width: 525px;
+        height: 35px;
+        border-radius: 20px;
+        font-weight: bold;
+}
+.in{
+    width: 525px;
+    height: 30px;
+}
