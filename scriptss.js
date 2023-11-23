@@ -16,18 +16,35 @@ function register_User(event) {
 function showData(obj) {
   let ptEle = document.getElementById("browData");
   //ptEle.innerHTML =ptEle.innerHTML + `<li>${obj.name} - ${obj.mail}--${obj.phone}</li>`;
-    let childEle = document.createElement("li");
-    childEle.textContent = obj.name +" - " +obj.mail +" - " +obj.phone+"";
-    
-    let delbtn = document.createElement('input')
-    delbtn.type ='button'
-    delbtn.className = "delbtn"
-    delbtn.value = 'Delete'
-    delbtn.onclick = ()=>{
-        localStorage.removeItem(obj.mail)
-        ptEle.removeChild(childEle)
-    }
+  let childEle = document.createElement("li");
+  childEle.textContent = obj.name + " - " + obj.mail + " - " + obj.phone;
 
-    childEle.appendChild(delbtn)
-    ptEle.appendChild(childEle);
+  //delete btn
+  let delbtn = document.createElement("input");
+  delbtn.type = "button";
+  delbtn.className = "delbtn";
+  delbtn.value = "Delete";
+  delbtn.onclick = () => {
+    localStorage.removeItem(obj.mail);
+    ptEle.removeChild(childEle);
+  };
+
+  //edit btn
+  let edtbtn = document.createElement("input");
+  edtbtn.type = "button";
+  edtbtn.className = "delbtn";
+  edtbtn.value = "Edit";
+  edtbtn.style.backgroundColor = "green";
+  edtbtn.style.color = "white";
+  edtbtn.onclick = ()=>{
+    localStorage.removeItem(obj.mail)
+    ptEle.removeChild(childEle)
+    document.getElementById("naam").value  = obj.name
+    document.getElementById("email").value = obj.mail
+    document.getElementById("cell").value = obj.phone
+  }
+
+  childEle.appendChild(delbtn);
+  childEle.appendChild(edtbtn);
+  ptEle.appendChild(childEle);
 }
