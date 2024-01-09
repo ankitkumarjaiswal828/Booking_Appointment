@@ -13,6 +13,14 @@ function register_User(event) {
   showData(obj);
 }
 
+axios.post("https://crudcrud.com/api/459e917cdcd24314bf2fea0062d61f5f", {
+      title: "New Todo",
+      complete: false,
+    })
+    .then((res) => showData(res.data))
+    .catch((err) => console.error(err)
+    );
+
 function showData(obj) {
   let ptEle = document.getElementById("browData");
   //ptEle.innerHTML =ptEle.innerHTML + `<li>${obj.name} - ${obj.mail}--${obj.phone}</li>`;
