@@ -12,6 +12,16 @@ function register_User(event) {
   localStorage.setItem(obj.mail, JSON.stringify(obj));
   showData(obj);
 }
+window.addEventListener("DOMContentLoaded",()=>{
+    axios
+    .get("https://crudcrud.com/api/459e917cdcd24314bf2fea0062d61f5f")
+    .then((res) =>{ showData(res)
+        for(let i=0;<res.data.lenght;i+){
+          showData(res.data[i])
+        }})
+    .catch((err) => console.error(err));
+      console.log(data)
+})
 
 axios.post("https://crudcrud.com/api/459e917cdcd24314bf2fea0062d61f5f", {
       title: "New Todo",
