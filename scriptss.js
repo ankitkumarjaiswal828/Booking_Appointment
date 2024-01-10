@@ -31,6 +31,18 @@ axios.post("https://crudcrud.com/api/459e917cdcd24314bf2fea0062d61f5f", {
     .catch((err) => console.error(err)
     );
 
+  function deleteUser(UserId){
+  axios.delete(`https://crudcrud.com/api/459e917cdcd24314bf2fea0062d61f5f/appointment/${UserId}`)
+  .then((res)=>{
+    removeEventListener(UserId)
+  })
+  .catch((err)=>{
+    console.log(err)
+  })
+  console.log(emailId)
+  localStorage.removeItem(emailId)
+  removeEventListener(emailId)
+}
 function showData(obj) {
   let ptEle = document.getElementById("browData");
   //ptEle.innerHTML =ptEle.innerHTML + `<li>${obj.name} - ${obj.mail}--${obj.phone}</li>`;
