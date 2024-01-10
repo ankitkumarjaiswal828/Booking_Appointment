@@ -31,6 +31,16 @@ axios.post("https://crudcrud.com/api/459e917cdcd24314bf2fea0062d61f5f", {
     .catch((err) => console.error(err)
     );
 
+
+function editUserDetails(name,emailId,phone){
+  document.getElementById("name").value = name
+  document.getElementById("email").value = emailId;
+  document.getElementById("phone").value = phone;
+  deleteUser(UserId);
+
+}
+
+
   function deleteUser(UserId){
   axios.delete(`https://crudcrud.com/api/459e917cdcd24314bf2fea0062d61f5f/appointment/${UserId}`)
   .then((res)=>{
